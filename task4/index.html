@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+</head>
+<body>
+    <label for="1"><input type="checkbox">1</label><br>
+    <label for="2"><input type="checkbox">2</label><br>
+    <label for="3"><input type="checkbox">3</label><br>
+    <label for="4"><input type="checkbox">4</label><br>
+    <label for="5"><input type="checkbox">5</label><br>
+    <label for="6"><input type="checkbox">6</label><br>
+    
+    <script>
+        $(document).ready(function () {
+            $("[type='checkbox']").on("change", function(){
+                let checkedCheckboxes = $("[type='checkbox']:checked");
+                
+                if(checkedCheckboxes.length >= 3){
+                    $("[type='checkbox']:not(:checked)").prop('disabled', true);
+                } else {
+                    $("[type='checkbox']").prop('disabled', false);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
